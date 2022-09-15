@@ -85,3 +85,5 @@ preds = model.predict(test_x)
 plt.figure(figsize=(10, 10))
 plt.contour(x_g, y_g, preds.reshape((n_y, n_x)), 10)
 plt.scatter(X[:, 0], X[:, 1], c=y)
+
+# %%
