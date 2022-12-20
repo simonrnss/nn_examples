@@ -131,14 +131,15 @@ def draw_network(x1, x2, background):
         (275, MAX_Y_PLOT + 55)
     )
 
-
+    x1b = x1*w1
+    pr = 1/(1 + np.exp(-x1b))
     pygame.draw.rect(
         background,
-        (255, 255, 255),
+        (255*pr, 50, 255*(1-pr)),
         pygame.Rect(100, MAX_Y_PLOT + 20, 40, 30)
     )
 
-    x1b = x1*w1
+    
     x1btext = myfont.render(f"{x1b:.2f}", 0, (0, 0, 0))
     background.blit(x1btext, (105, MAX_Y_PLOT+25))
 
@@ -147,14 +148,15 @@ def draw_network(x1, x2, background):
         (105, MAX_Y_PLOT + 5)
     )
 
+    x2b = x2*w2
+    pr = 1/(1 + np.exp(-x2b))
     pygame.draw.rect(
         background,
-        (255, 255, 255),
+        (255*pr, 50, 255*(1-pr)),
         pygame.Rect(100, MAX_Y_PLOT + 70, 40, 30)
     )
 
-    x2b = x2*w2
-    x1btext = myfont.render(f"{x2b:.2f}", 0, (0, 0, 0))
+    x1btext = myfont.render(f"{x2b:.2f}", 0, (255, 255, 255))
     background.blit(x1btext, (105, MAX_Y_PLOT+75))
 
     background.blit(
@@ -162,15 +164,15 @@ def draw_network(x1, x2, background):
         (105, MAX_Y_PLOT + 110)
     )
 
-
+    x0b = w0
+    pr = 1/(1 + np.exp(-x0b))
     pygame.draw.rect(
         background,
-        (255, 255, 255),
+        (255*pr, 50, 255*(1-pr)),
         pygame.Rect(120, MAX_Y_PLOT + 140, 40, 30)
     )
 
-    x0b = w0
-    x0btext = myfont.render(f"{x0b:.2f}", 0, (0, 0, 0))
+    x0btext = myfont.render(f"{x0b:.2f}", 0, (255, 255, 255))
     background.blit(x0btext, (125, MAX_Y_PLOT+145))
 
     background.blit(
