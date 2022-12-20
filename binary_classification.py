@@ -87,3 +87,13 @@ plt.contour(x_g, y_g, preds.reshape((n_y, n_x)), 10)
 plt.scatter(X[:, 0], X[:, 1], c=y)
 
 # %%
+import csv
+with open('data.csv', 'w') as f:
+    writer = csv.writer(f)
+    for row in X:
+        writer.writerow(row)
+# %%
+with open('params.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerow([w0, w1, w2])
+# %%
