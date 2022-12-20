@@ -2,3 +2,5 @@ tensorflow
 jupyter
 matplotlib
 numpy
+pygame
+pygame_gui
